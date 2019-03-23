@@ -8,6 +8,7 @@ package galgeleg;
 import java.io.IOException;
 import java.util.ArrayList;
 
+
 /**
  *
  * @author Casper
@@ -39,9 +40,13 @@ public interface GalgeI extends java.rmi.Remote{
             
     void logStatus() throws java.rmi.RemoteException;        
             
-    //static String hentUrl(String url) throws IOException; //throws java.rmi.RemoteException;
-            
-    //void hentOrdFraDr() throws Exception;  //throws java.rmi.RemoteException;      
+    static String hentUrl(String url) throws IOException, java.rmi.RemoteException{
+        return null;
+        
+    };          
+   
+    
+    void hentOrdFraDr() throws Exception, java.rmi.RemoteException;
             
             
             

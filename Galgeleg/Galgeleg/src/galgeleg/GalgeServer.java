@@ -4,7 +4,11 @@
  * and open the template in the editor.
  */
 package galgeleg;
+import static java.lang.System.out;
+import static java.lang.System.setProperty;
 import java.rmi.Naming;
+import static java.rmi.Naming.rebind;
+import static java.rmi.registry.LocateRegistry.createRegistry;
 
 /**
  *
@@ -14,12 +18,13 @@ public class GalgeServer {
     
     public static void main(String[] args) throws Exception {
         
-        
-    java.rmi.registry.LocateRegistry.createRegistry(1099); // start i server-JVM
+        	setProperty("java.rmi.server.hostname", "130.225.170.204");
+
+                createRegistry(16202); // start i server-JVM
 
 		GalgeI g = new Galgelogik();
-		Naming.rebind("rmi://localhost:1099/kontotjeneste", g);
-		System.out.println("Kontotjeneste registreret.");
+                rebind("rmi://localhost:16202/kontotjeneste", g);
+                out.println("Galge Server Oprettet");
        
         
         
